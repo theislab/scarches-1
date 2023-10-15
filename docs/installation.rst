@@ -1,11 +1,6 @@
 Installation
 ============
 
-.. note::
-
-   From version `0.3.0` we moved to PyTorch, however you can still install latest
-   Tensoflow version by installing `0.2.4`.
-
 
 scArches requires Python 3.7 or 3.8. We recommend to use Miniconda.
 
@@ -16,6 +11,20 @@ PyPI
 The easiest way to get scArches is through pip using the following command::
 
     sudo pip install -U scarches
+
+
+Conda Environment
+---------------------
+
+
+You can also use our environment file. This will create the conda environment 'scarches' with
+the required dependencies::
+
+    git clone https://github.com/theislab/scarches
+    cd scarches
+    conda env create -f envs/scarches_linux.yaml
+    conda activate scarches
+
 
 Development
 ---------------
@@ -36,6 +45,6 @@ On Windows machines you may need to download a C++ compiler if you wish to build
 Dependencies
 ------------
 
-The list of dependencies for scArches can be found in the `requirements.txt <https://github.com/theislab/scarches/blob/master/requirements.txt>`_ file in the repository.
+The list of dependencies for scArches can be found in the `requirements.txt <https://github.com/theislab/scarches/blob/master/docs/requirements.txt>`_ file in the repository.
 
 If you run into issues, do not hesitate to approach us or raise a `GitHub issue <https://github.com/theislab/scarches/issues/new/choose>`_.

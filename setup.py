@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 from setuptools import setup, find_packages
 
@@ -8,7 +9,11 @@ try:
     from scarches import __author__, __email__, __version__
 except ImportError:  # Deps not yet installed
     __author__ = __email__ = ''
-    __version__ = '0.5.4'
+    __version__ = '0.5.9'
+
+# otherwise readthedocs fails
+# because somewhere in the dependency tree there is the sklearn deprecated package
+os.environ["SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL"] = "True"
 
 setup(name='scArches',
       version=__version__,
@@ -36,11 +41,12 @@ setup(name='scArches',
     	"tqdm>=4.56.0",
     	"requests",
         "gdown",
+        "leidenalg",  # TODO: set version criteria
+        "muon",
       ],
       classifiers=[
-          "Programming Language :: Python :: 3.6",
-          "Programming Language :: Python :: 3.7",
           "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
           'Environment :: Console',
           'Framework :: Jupyter',
           'Intended Audience :: Developers',
